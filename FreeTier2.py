@@ -123,7 +123,7 @@ city_df = city_df[(city_df['longitude'] >= lon_range[0]) & (city_df['longitude']
 city_df['Permit_Sum'] = city_df[selected_permits].sum(axis=1)
 
 # Select only the necessary columns
-city_df = city_df[['YEAR', 'latitude', 'longitude', 'Permit_Sum', #'CONTRACTOR_NAME', 'ESTIMATED_VALUE'] + selected_permits].copy()
+city_df = city_df[['YEAR', 'latitude', 'longitude', 'Permit_Sum', 'ESTIMATED_VALUE'] + selected_permits].copy()
 
 # Create bins for latitude and longitude
 cell_size = st.sidebar.number_input('Cell Size', value=0.01, step=0.01, min_value = 0.01)
