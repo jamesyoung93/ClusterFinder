@@ -204,13 +204,5 @@ plt.figtext(0.5, 0.01, "Note: The data for the current year, 2024, is not comple
 st.pyplot(fig)
 
 
-# Get top 5 contractors by number of jobs and estimated value
-top_contractors_jobs = filtered_city_df.groupby('CONTRACTOR_NAME')['Job_Count'].sum().sort_values(ascending=False).head(5)
-top_contractors_value = filtered_city_df.groupby('CONTRACTOR_NAME')['ESTIMATED_VALUE'].sum().sort_values(ascending=False).head(5)
 
-st.subheader("Top 5 Contractors by Number of Jobs")
-st.write(top_contractors_jobs.reset_index().rename(columns={'Job_Count': 'Number of Jobs'}))
-
-st.subheader("Top 5 Contractors by Estimated Value")
-st.write(top_contractors_value.reset_index().rename(columns={'ESTIMATED_VALUE': 'Estimated Value'}))
 
